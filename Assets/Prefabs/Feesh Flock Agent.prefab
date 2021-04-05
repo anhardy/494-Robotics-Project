@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6258335672438549073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6258335672438549086}
+  - component: {fileID: 6258335672438549087}
+  - component: {fileID: 6258335672438549072}
+  - component: {fileID: 8779214787356996135}
+  m_Layer: 0
+  m_Name: Feesh Flock Agent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6258335672438549086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258335672438549073}
+  m_LocalRotation: {x: 0.00000002980233, y: -0.70710576, z: -0.000000022351742, w: 0.7071079}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 243443809762836949}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!135 &6258335672438549087
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258335672438549073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0.41, z: 0}
+--- !u!114 &6258335672438549072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258335672438549073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6adac0b98721dc247ae670e1d368d110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8779214787356996135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258335672438549073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcd9ec84e2d39f41974da450ed24cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment1: This has the collider and the feesh (flock agent) script.
+  comment2: There is no actual model here, but it contains a child object
+  comment3: which is the model.
+--- !u!1001 &8641169395667364719
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6258335672438549086}
+    m_Modifications:
+    - target: {fileID: 8397941250540726949, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_Name
+      value: Feesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000004214691
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000119209275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000003160999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+--- !u!4 &243443809762836949 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+  m_PrefabInstance: {fileID: 8641169395667364719}
+  m_PrefabAsset: {fileID: 0}

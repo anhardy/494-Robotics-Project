@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class FlockingBehavior : ScriptableObject
 {
-    public abstract Vector3 CalcDirection (Feesh feesh,  List<Transform> context, Flock flock); //Context list is list of neighbors around feesh.
+    public abstract Vector3 CalculateDirection (Feesh feesh,  List<Transform> nearby, Flock flock); 
 }

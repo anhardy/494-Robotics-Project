@@ -36,9 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\FlockingBehavior.cs" />
-     <Compile Include="Assets\Scripts\Feesh.cs" />
      <Compile Include="Assets\Scripts\Flock.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\Alignment.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\Avoidance.cs" />
+     <Compile Include="Assets\Scripts\FlockingBehavior.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\Composite.cs" />
+     <Compile Include="Assets\Scripts\Comment.cs" />
+     <Compile Include="Assets\Scripts\Feesh.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\Cohesion.cs" />
+     <Compile Include="Assets\Scripts\SteeredCohesion.cs" />
     <Reference Include="UnityEngine">
         <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

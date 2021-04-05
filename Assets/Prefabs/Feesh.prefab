@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8397941249613563001
+--- !u!1 &5700816700241345136
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8397941249613563006}
-  - component: {fileID: 8397941249613563005}
-  - component: {fileID: 8397941249613563004}
-  - component: {fileID: 8397941249613563007}
+  - component: {fileID: 1579856750955039441}
+  - component: {fileID: 1288472767424452369}
+  - component: {fileID: 3908173319251124729}
+  - component: {fileID: 8321173985447698183}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -19,35 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8397941249613563006
+--- !u!4 &1579856750955039441
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397941249613563001}
+  m_GameObject: {fileID: 5700816700241345136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.708, y: 0.698, z: 0}
-  m_LocalScale: {x: 0.88346034, y: 0.42828453, z: 0.25919142}
+  m_LocalPosition: {x: -0, y: 0.698, z: 0.234}
+  m_LocalScale: {x: 0.8142864, y: 0.39475033, z: 0.23889704}
   m_Children: []
   m_Father: {fileID: 8397941250540726970}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8397941249613563005
+--- !u!33 &1288472767424452369
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397941249613563001}
+  m_GameObject: {fileID: 5700816700241345136}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8397941249613563004
+--- !u!23 &3908173319251124729
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397941249613563001}
+  m_GameObject: {fileID: 5700816700241345136}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,13 +82,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8397941249613563007
+--- !u!65 &8321173985447698183
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8397941249613563001}
+  m_GameObject: {fileID: 5700816700241345136}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -199,6 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8397941250540726970}
+  - component: {fileID: 6329361132263201227}
   m_Layer: 0
   m_Name: Feesh
   m_TagString: Untagged
@@ -213,12 +214,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8397941250540726949}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38308, y: 0.38308, z: 0.38308}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: -0.047408536, y: -0.19196999, z: -0.21221657}
+  m_LocalScale: {x: 0.2614866, y: 0.6581315, z: 1.8237673}
   m_Children:
   - {fileID: 8397941249814907742}
-  - {fileID: 8397941249613563006}
+  - {fileID: 1579856750955039441}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6329361132263201227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397941250540726949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcd9ec84e2d39f41974da450ed24cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment1: This is the actual model for the feesh. There is no code here.
+  comment2: Don't place this in the scene unless you don't want it to flock at all.
+  comment3: 
