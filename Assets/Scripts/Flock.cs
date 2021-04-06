@@ -18,6 +18,7 @@ public class Flock : MonoBehaviour
   public float neighborRadius = 1.5f;
   [Range(0f,1f)]
   public float avoidanceRadiusMultiplier = 0.5f;
+  public bool useTags = false;
 
   float squareMaxVelocity;
   float squareNeighborRadius;
@@ -60,8 +61,12 @@ public class Flock : MonoBehaviour
         List<Transform> nearby = new List<Transform>(); //List of nearby transforms.
         Collider[] nearbyColliders = Physics.OverlapSphere(feesh.transform.position, neighborRadius); //Array of nearby sphere colliders around current fish within radius
         foreach(Collider collider in nearbyColliders) { //Another loop being ran inside a loop for every frame. I do not like this.
-            if (collider != feesh.getFeeshCollider) { //If collider is not feesh's own collider
-                nearby.Add(collider.transform); //Add transform of nearby collider to nearby list
+            if (collider != feesh.getFeeshCollider) { //If collider is not feesh's own collider 
+                if(useTags == false) { //If flock indescriminately groups up
+                    nearby.Add(collider.transform); //Add transform of nearby collider to nearby list
+                } else if(feesh.CompareTag(collider.tag)) { //Otherwise filter by tag
+                    nearby.Add(collider.transform);
+                }
             }
         }
 
