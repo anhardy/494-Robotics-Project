@@ -18,7 +18,7 @@ public class Flock : MonoBehaviour
   public float neighborRadius = 1.5f;
   [Range(0f,1f)]
   public float avoidanceRadiusMultiplier = 0.5f;
-  public bool useTags = false;
+  public bool useTags = false; //Use this if you want your flock to only include members with the same tag
 
   float squareMaxVelocity;
   float squareNeighborRadius;
