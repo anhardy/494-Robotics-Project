@@ -992,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &794285495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,12 +1021,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feeshPrefab: {fileID: 6258335672438549072, guid: 81f295bfadc579b46af38b4f486064e0, type: 3}
+  feeshLeaderPrefab: {fileID: 0}
   behavior: {fileID: 11400000, guid: c170b3ce92faebd429fe80b9fef3a7fe, type: 2}
   flockCount: 1000
   velocityMultiplier: 1
   maxVelocity: 1
   neighborRadius: 2.35
   avoidanceRadiusMultiplier: 0.507
+  followToRadius: 5
   useTags: 0
   stayWithinThisFlock: 1
   respectDiscriminators: 1
@@ -1429,7 +1431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &984941778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,12 +1445,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feeshPrefab: {fileID: 6258335672438549072, guid: e9425086007b4484895c1f283295f16d, type: 3}
+  feeshLeaderPrefab: {fileID: 0}
   behavior: {fileID: 11400000, guid: c170b3ce92faebd429fe80b9fef3a7fe, type: 2}
   flockCount: 1000
   velocityMultiplier: 1
   maxVelocity: 1
   neighborRadius: 2.35
   avoidanceRadiusMultiplier: 0.507
+  followToRadius: 5
   useTags: 0
   stayWithinThisFlock: 0
   respectDiscriminators: 1
@@ -2006,6 +2010,77 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478142344}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1624016728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624016731}
+  - component: {fileID: 1624016730}
+  - component: {fileID: 1624016729}
+  m_Layer: 0
+  m_Name: Flock with Leader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1624016729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624016728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcd9ec84e2d39f41974da450ed24cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment1: 
+  comment2: 
+  comment3: 
+--- !u!114 &1624016730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624016728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee8a7105a569664f85246d75aaaf747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feeshPrefab: {fileID: 6258335672438549072, guid: 81f295bfadc579b46af38b4f486064e0, type: 3}
+  feeshLeaderPrefab: {fileID: 6258335672438549072, guid: 3e5c459cf36e097439e951dc1757e8b8, type: 3}
+  behavior: {fileID: 11400000, guid: 154170b161ea25c4fa24a03d818d2cf6, type: 2}
+  flockCount: 232
+  velocityMultiplier: 1
+  maxVelocity: 1
+  neighborRadius: 1
+  avoidanceRadiusMultiplier: 1
+  followToRadius: 0
+  useTags: 0
+  stayWithinThisFlock: 1
+  respectDiscriminators: 1
+--- !u!4 &1624016731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624016728}
+  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: 0.836825, y: 0.69799995, z: 0.47573304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1714565763
 GameObject:
   m_ObjectHideFlags: 0
