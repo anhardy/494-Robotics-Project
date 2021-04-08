@@ -4,11 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))] //Needed to see what's around the feesh
 public class Feesh : MonoBehaviour
 {
+    Flock thisFlock; //The Flock object/class this feesh belongs to
     Collider feeshCollider;
     public Collider getFeeshCollider {
         get {
             return feeshCollider;
         }
+    }
+    public Flock getFlock {
+        get {
+            return thisFlock;
+        }
+    }
+    public void InitializeFlock(Flock flock) {
+        thisFlock = flock;
     }
     // Start is called before the first frame update
     void Start()

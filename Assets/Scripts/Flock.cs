@@ -8,17 +8,27 @@ public class Flock : MonoBehaviour
   List<Feesh> feeshes = new List<Feesh>();
   public FlockingBehavior behavior;
   [Range(1,1000)]
+  [Tooltip("How many agents are in the flock")]
   public int flockCount = 250;
   const float feeshDensity = 0.08f;
   [Range(1f, 100f)]
+  [Tooltip("Increase the velocity of the flock agents")]
   public float velocityMultiplier = 10f;
   [Range(1f,100f)]
+  [Tooltip("The maximum velocity of the flock agents")]
   public float maxVelocity = 5f;
   [Range(1f, 10f)]
+  [Tooltip("The radius agents will accept neighbors in")]
   public float neighborRadius = 1.5f;
   [Range(0f,1f)]
+  [Tooltip("The radius agents will consider other agents to be too close")]
   public float avoidanceRadiusMultiplier = 0.5f;
-  public bool useTags = false; //Use this if you want your flock to only include members with the same tag
+  [Tooltip("Fish agents will group up with other fish agents who have the same tag, regardless of what Flock instance they are apart of, but ignore any other fish. This applies to the tags of the fish agent type the flock spawns, not the tag of the flock itself.")]
+  public bool useTags = false; //Use this if you want your feesh to only group with other feesh of the same tag (can be outside this Flock object)
+  [Tooltip("Fish agents will exclusively group up with fish spawned by their Flock class object. This takes takes precedence over tags.")]
+  public bool stayWithinThisFlock = false; //Use this if you want your feesh to only stay within the same instance of the Flock class (takes priority over useTags)
+  [Tooltip("Fish agents will respect the above two discriminators. If disabled, these agents will continue to group up with agents who are ignoring them")]
+  public bool respectDiscriminators = true; //Use this if you want agents of this flock to ignore flocks with useTags or stayWithinThisFlock set to true;
 
   float squareMaxVelocity;
   float squareNeighborRadius;
@@ -42,6 +52,7 @@ public class Flock : MonoBehaviour
               transform
           );
           newFeesh.name = "feesh " + i;
+          newFeesh.InitializeFlock(this); //This instance of the Flock class is the Flock this feesh belongs to
           feeshes.Add(newFeesh);
       }
   }
@@ -62,10 +73,31 @@ public class Flock : MonoBehaviour
         Collider[] nearbyColliders = Physics.OverlapSphere(feesh.transform.position, neighborRadius); //Array of nearby sphere colliders around current fish within radius
         foreach(Collider collider in nearbyColliders) { //Another loop being ran inside a loop for every frame. I do not like this.
             if (collider != feesh.getFeeshCollider) { //If collider is not feesh's own collider 
-                if(useTags == false) { //If flock indescriminately groups up
-                    nearby.Add(collider.transform); //Add transform of nearby collider to nearby list
-                } else if(feesh.CompareTag(collider.tag)) { //Otherwise filter by tag
-                    nearby.Add(collider.transform);
+                if(useTags == false && stayWithinThisFlock == false) { //If flock indescriminately groups up
+                    if(respectDiscriminators == false) { //If ignores discriminators of other flocks
+                        nearby.Add(collider.transform); //Add transform of nearby collider to nearby list and follow anyways
+                    } else { //If we respect flocks with discriminators
+                        Feesh feeshInstance = collider.GetComponent<Feesh>(); //Get Feesh object from its collider
+                        if(feeshInstance != null && feeshInstance.getFlock.stayWithinThisFlock == false && feeshInstance.getFlock.useTags == false) { //If collider belongs to a feesh and this feesh does not use discriminators
+                            nearby.Add(collider.transform);
+                        }
+                    }
+                } else if(stayWithinThisFlock == true) { //Else if grouping up by class instance
+                    Feesh feeshInstance = collider.GetComponent<Feesh>(); 
+                    if(feeshInstance != null && feeshInstance.getFlock == feesh.getFlock) { //If collider belongs to a feesh and is part of same class
+                        nearby.Add(collider.transform); 
+                    }
+                }
+                else if(feesh.CompareTag(collider.tag)) { //Otherwise filter by tag
+                    //An agent with the same tag may belong to a different flock which wishes to stay within that class. Need to check 
+                    if(respectDiscriminators == false) {  //If we ignore discriminators
+                        nearby.Add(collider.transform);
+                    } else { 
+                        Feesh feeshInstance = collider.GetComponent<Feesh>();
+                        if(feeshInstance != null && feeshInstance.getFlock.stayWithinThisFlock == false && feeshInstance.getFlock.useTags == false) { //If collider belongs to a feesh and this feesh does not use discriminators
+                            nearby.Add(collider.transform);
+                        }
+                    }
                 }
             }
         }
