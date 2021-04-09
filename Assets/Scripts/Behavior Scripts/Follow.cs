@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behavior/Follow")]
 public class Follow : FlockingBehavior
 {
+    Vector3 currentVelocity;
+    public float feeshSmoothTime = 0.01f; //How long to get from current state to caluclated state
     public override Vector3 CalculateDirection(Feesh feesh, List<Transform> nearby, Flock flock)
     {
         if (flock.feeshLeaderPrefab != null)
@@ -15,7 +17,9 @@ public class Follow : FlockingBehavior
             if(distanceToLeader > distanceToFollowTo) {
                 followDirection = feeshLeader.transform.position - feesh.transform.position;
             }
-
+            if(flock.smoothFollow == true) {
+                followDirection = Vector3.SmoothDamp(feesh.transform.forward, followDirection, ref currentVelocity, feeshSmoothTime);
+            }
             return followDirection;
         }
         return Vector3.zero;

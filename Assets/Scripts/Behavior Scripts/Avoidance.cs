@@ -24,12 +24,12 @@ public class Avoidance : FlockingBehavior
             }
         }
 
-        if (flock.GetLeader != null)
+        //if (flock.GetLeader != null)
 
-            if (collisionCount > 0)
-            { //No divide by zero please
-                avoidanceDirection = avoidanceDirection / collisionCount; //Average out positions. 
-            }
+        if (collisionCount > 0)
+        { //No divide by zero please
+            avoidanceDirection = avoidanceDirection / collisionCount; //Average out positions. 
+        }
 
         avoidanceDirection = Vector3.SmoothDamp(feesh.transform.forward, avoidanceDirection, ref currentVelocity, feeshSmoothTime);
 

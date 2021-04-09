@@ -41,12 +41,13 @@
      <Compile Include="Assets\Scripts\Behavior Scripts\Avoidance.cs" />
      <Compile Include="Assets\Scripts\Behavior Scripts\SteeredCohesion.cs" />
      <Compile Include="Assets\Scripts\FlockingBehavior.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\AvoidObstacles.cs" />
      <Compile Include="Assets\Scripts\Behavior Scripts\Composite.cs" />
      <Compile Include="Assets\Scripts\Comment.cs" />
      <Compile Include="Assets\Scripts\Feesh.cs" />
      <Compile Include="Assets\Filter Scripts\PhysicsLayerFilter.cs" />
-     <Compile Include="Assets\Scripts\Behavior Scripts\Cohesion.cs" />
      <Compile Include="Assets\Scripts\Behavior Scripts\Follow.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\Cohesion.cs" />
     <Reference Include="UnityEngine">
         <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
