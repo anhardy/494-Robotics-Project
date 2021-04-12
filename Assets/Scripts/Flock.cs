@@ -123,8 +123,10 @@ public class Flock : MonoBehaviour
     List<Transform> GetNearbyObjects(Feesh feesh)
     {
         List<Transform> nearby = new List<Transform>(); //List of nearby transforms.
-        Collider[] nearbyColliders = Physics.OverlapSphere(feesh.transform.position, neighborRadius); //Array of nearby sphere colliders around current fish within radius
-        foreach (Collider collider in nearbyColliders)
+        int nearFishCount = 0;
+        Collider[] nearbyNeighborColliders = Physics.OverlapSphere(feesh.transform.position, neighborRadius); //Array of nearby colliders around current fish within neighbor radius
+        Collider[] nearbyObstacleColliders = Physics.OverlapSphere(feesh.transform.position, obstacleAvoidanceRadius); //Array of nearby colliders within obstacle avoidance readius
+        foreach (Collider collider in nearbyNeighborColliders)
         { //Another loop being ran inside a loop for every frame. I do not like this.
             if (!collider.gameObject.layer.Equals(LayerMask.NameToLayer("Obstacle"))) //If not an obstacle
             {
@@ -134,6 +136,7 @@ public class Flock : MonoBehaviour
                     { //If flock indescriminately groups up
                         if (respectDiscriminators == false)
                         { //If ignores discriminators of other flocks
+                            nearFishCount++;
                             nearby.Add(collider.transform); //Add transform of nearby collider to nearby list and follow anyways
                         }
                         else
@@ -141,6 +144,7 @@ public class Flock : MonoBehaviour
                             Feesh feeshInstance = collider.GetComponent<Feesh>(); //Get Feesh object from its collider
                             if (feeshInstance != null && feeshInstance.getFlock.stayWithinThisFlock == false && feeshInstance.getFlock.useTags == false)
                             { //If collider belongs to a feesh and this feesh does not use discriminators
+                                nearFishCount++;
                                 nearby.Add(collider.transform);
                             }
                         }
@@ -150,6 +154,7 @@ public class Flock : MonoBehaviour
                         Feesh feeshInstance = collider.GetComponent<Feesh>();
                         if (feeshInstance != null && feeshInstance.getFlock == feesh.getFlock)
                         { //If collider belongs to a feesh and is part of same class
+                            nearFishCount++;
                             nearby.Add(collider.transform);
                         }
                     }
@@ -158,6 +163,7 @@ public class Flock : MonoBehaviour
                       //An agent with the same tag may belong to a different flock which wishes to stay within that class. Need to check 
                         if (respectDiscriminators == false)
                         {  //If we ignore discriminators
+                            nearFishCount++;
                             nearby.Add(collider.transform);
                         }
                         else
@@ -165,13 +171,19 @@ public class Flock : MonoBehaviour
                             Feesh feeshInstance = collider.GetComponent<Feesh>();
                             if (feeshInstance != null && feeshInstance.getFlock.stayWithinThisFlock == false && feeshInstance.getFlock.useTags == false)
                             { //If collider belongs to a feesh and this feesh does not use discriminators
+                                nearFishCount++;
                                 nearby.Add(collider.transform);
                             }
                         }
                     }
                 }
-            } else {
-                nearby.Add(collider.transform); //Add obstacle no matter what
+            }
+        }
+        feesh.NearbyCount = nearFishCount;
+        foreach (Collider collider in nearbyObstacleColliders)
+        {
+            if (collider.gameObject.layer.Equals(LayerMask.NameToLayer("Obstacle"))) { //If an obstalce
+                nearby.Add(collider.transform); //Add collider no matter what
             }
         }
 

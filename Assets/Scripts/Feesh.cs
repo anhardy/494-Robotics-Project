@@ -6,6 +6,7 @@ public class Feesh : MonoBehaviour
 {
     Flock thisFlock; //The Flock object/class this feesh belongs to
     Collider feeshCollider;
+    int nearbyCount = 0;
     public Collider getFeeshCollider {
         get {
             return feeshCollider;
@@ -23,6 +24,15 @@ public class Feesh : MonoBehaviour
     void Start()
     {
         feeshCollider = GetComponent<Collider>();
+    }
+
+    public int NearbyCount { 
+        get {
+            return nearbyCount;
+            }
+        set {
+            nearbyCount = value;
+        }
     }
 
     public void Move(Vector3 velocity) {

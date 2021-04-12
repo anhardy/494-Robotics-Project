@@ -8,14 +8,18 @@ public class SteeredCohesion : FlockingBehavior
     public float feeshSmoothTime = 0.5f; //How long to get from current state to caluclated state
     public override Vector3 CalculateDirection(Feesh feesh, List<Transform> nearby, Flock flock)
     {
-        if(nearby.Count == 0) { //If no fish nearby
+        if(feesh.NearbyCount == 0) { //If no fish nearby
             return Vector3.zero; //No adjustment necessary
         }
         Vector3 cohesionDirection = Vector3.zero; //Direction to move to stay in cohesion, initialized to zero
-        foreach(Transform nearbyFeesh in nearby) {
-            cohesionDirection += nearbyFeesh.position; //Add position of each nearby feesh           
+        foreach (Transform nearbyFeesh in nearby)
+        {
+            if (!nearbyFeesh.gameObject.layer.Equals(LayerMask.NameToLayer("Obstacle"))) //If not an obstacle
+            {
+                cohesionDirection += nearbyFeesh.position; //Add position of each nearby feesh     
+            }
         }
-        cohesionDirection = cohesionDirection / nearby.Count; //Average out positions. However, this is a global position
+        cohesionDirection = cohesionDirection / feesh.NearbyCount; //Average out positions. However, this is a global position
         cohesionDirection -= feesh.transform.position; //Offset from current feesh position
 
         //Take current direction vector, direction vector of cohesion movement, our current velocity, and apply our smoothing

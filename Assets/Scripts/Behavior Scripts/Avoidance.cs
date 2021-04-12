@@ -9,7 +9,7 @@ public class Avoidance : FlockingBehavior
     public override Vector3 CalculateDirection(Feesh feesh, List<Transform> nearby, Flock flock)
     {
 
-        if (nearby.Count == 0)
+        if (feesh.NearbyCount == 0)
         { //If no fish nearby
             return Vector3.zero; //No adjustment necessary
         }
@@ -17,10 +17,13 @@ public class Avoidance : FlockingBehavior
         int collisionCount = 0; //How many neighbors are in collision radius
         foreach (Transform nearbyFeesh in nearby)
         {
-            if (Vector3.SqrMagnitude(nearbyFeesh.position - feesh.transform.position) < flock.getSquareAvoidanceRadius)
-            { //If the square distance between current feesh and nearby feesh is within avoidance radius
-                collisionCount++;
-                avoidanceDirection += feesh.transform.position - nearbyFeesh.position; //Current position minus position of offending feesh. This also calculates offset from global position       
+            if (!nearbyFeesh.gameObject.layer.Equals(LayerMask.NameToLayer("Obstacle"))) //If not an obstacle
+            {
+                if (Vector3.SqrMagnitude(nearbyFeesh.position - feesh.transform.position) < flock.getSquareAvoidanceRadius)
+                { //If the square distance between current feesh and nearby feesh is within avoidance radius
+                    collisionCount++;
+                    avoidanceDirection += feesh.transform.position - nearbyFeesh.position; //Current position minus position of offending feesh. This also calculates offset from global position       
+                }
             }
         }
 

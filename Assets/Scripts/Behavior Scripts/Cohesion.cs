@@ -15,7 +15,7 @@ public class Cohesion : FlockingBehavior //Inherits Flocking Behavior
         foreach(Transform nearbyFeesh in nearby) {
             cohesionDirection += nearbyFeesh.position; //Add position of each nearby feesh           
         }
-        cohesionDirection = cohesionDirection / nearby.Count; //Average out positions. However, this is a global position
+        cohesionDirection = cohesionDirection / feesh.NearbyCount; //Average out positions. However, this is a global position
         cohesionDirection -= feesh.transform.position; //Offset from current feesh position
 
         return cohesionDirection;

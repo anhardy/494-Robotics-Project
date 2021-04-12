@@ -11609,7 +11609,7 @@ MonoBehaviour:
   maxVelocity: 10.5
   neighborRadius: 1.89
   avoidanceRadiusMultiplier: 0.524
-  obstacleAvoidanceRadius: 5.2
+  obstacleAvoidanceRadius: 3
   followToRadius: 5
   smoothFollow: 0
   useTags: 0
@@ -14981,7 +14981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1345199549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15017,7 +15017,7 @@ MonoBehaviour:
   maxVelocity: 3
   neighborRadius: 1
   avoidanceRadiusMultiplier: 1
-  obstacleAvoidanceRadius: 5
+  obstacleAvoidanceRadius: 1
   followToRadius: 10
   smoothFollow: 0
   useTags: 0
@@ -18379,7 +18379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1624016729
 MonoBehaviour:
   m_ObjectHideFlags: 0
