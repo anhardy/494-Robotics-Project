@@ -82,7 +82,7 @@ public class Flock : MonoBehaviour
             stayWithinThisFlock = true;
             newLeader = Instantiate(
                 feeshLeaderPrefab, //Our feesh prefab
-                Random.insideUnitSphere * flockCount * feeshDensity,  //A random position in sphere (with size based on number of feesh) to spawn it at
+                Random.insideUnitSphere * flockCount * feeshDensity + this.gameObject.transform.position,  //A random position in sphere (with size based on number of feesh) to spawn it at
                 Random.rotation, //Facing a random direction
                 transform //With this class as the parent
             );
@@ -92,7 +92,7 @@ public class Flock : MonoBehaviour
         { //For the number of feesh we want
             Feesh newFeesh = Instantiate(
                 feeshPrefab, //Our feesh prefab
-                Random.insideUnitSphere * flockCount * feeshDensity,  //A random position in sphere (with size based on number of feesh) to spawn it at
+                Random.insideUnitSphere * flockCount * feeshDensity + this.gameObject.transform.position,  //A random position in sphere (with size based on number of feesh) to spawn it at
                 Random.rotation, //Facing a random direction
                 transform //With this class as the parent
             );

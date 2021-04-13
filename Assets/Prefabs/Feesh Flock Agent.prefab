@@ -45,8 +45,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 0.41, z: 0}
+  m_Radius: 0.66
+  m_Center: {x: 0, y: 0.54, z: 0.12}
 --- !u!114 &6258335672438549072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +84,14 @@ PrefabInstance:
     - target: {fileID: 8397941250540726949, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
       propertyPath: m_Name
       value: Feesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726949, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397941250540726949, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
+      propertyPath: m_TagString
+      value: Flock 1
       objectReference: {fileID: 0}
     - target: {fileID: 8397941250540726970, guid: 550f45e049191c045ad0811d6e75b30e, type: 3}
       propertyPath: m_LocalPosition.x

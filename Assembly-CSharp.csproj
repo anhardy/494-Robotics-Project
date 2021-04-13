@@ -48,6 +48,15 @@
      <Compile Include="Assets\Filter Scripts\PhysicsLayerFilter.cs" />
      <Compile Include="Assets\Scripts\Behavior Scripts\Follow.cs" />
      <Compile Include="Assets\Scripts\Behavior Scripts\Cohesion.cs" />
+     <Compile Include="Assets\Sardine\Scripts\SardineCameraScript.cs" />
+     <Compile Include="Assets\Sardine\Scripts\SardineBoidsController.cs" />
+     <Compile Include="Assets\Sardine\Scripts\SardineBoidScript.cs" />
+     <Compile Include="Assets\Sardine\Scripts\IwasiOcean.cs" />
+     <Compile Include="Assets\Sardine\Scripts\IwasiRigid.cs" />
+     <Compile Include="Assets\Sardine\Scripts\SardineUserController.cs" />
+     <Compile Include="Assets\Sardine\Scripts\IwasiMove.cs" />
+     <Compile Include="Assets\Sardine\Scripts\SardineCharacter.cs" />
+     <None Include="Assets\Sardine\ReadMe.txt" />
     <Reference Include="UnityEngine">
         <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -608,6 +617,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>C:/Users/ahard_000/Documents/Projects/Unity/Unity 3D Course/Third Project/Boids Flocking Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools">
+        <HintPath>C:/Users/ahard_000/Documents/Projects/Unity/Unity 3D Course/Third Project/Boids Flocking Project/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools.Editor">
+        <HintPath>C:/Users/ahard_000/Documents/Projects/Unity/Unity 3D Course/Third Project/Boids Flocking Project/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
