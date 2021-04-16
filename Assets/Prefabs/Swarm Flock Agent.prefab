@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6258335672438549072}
   - component: {fileID: 8779214787356996135}
   m_Layer: 0
-  m_Name: Feesh Flock Agent Type 2
+  m_Name: Swarm Flock Agent
   m_TagString: Flock 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

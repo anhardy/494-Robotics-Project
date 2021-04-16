@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flock 1
   - Flock 2
+  - Terrain
   layers:
   - Default
   - TransparentFX
