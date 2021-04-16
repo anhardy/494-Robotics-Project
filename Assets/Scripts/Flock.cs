@@ -30,6 +30,8 @@ public class Flock : MonoBehaviour
     [Tooltip("The radius agents will avoid obstacles")]
     public float obstacleAvoidanceRadius = 5f;
     [Range(0f, 100f)]
+    [Tooltip("The radius the flock will attempt to stay within")]
+    public float stayWithinRadius = 5f;
     [Tooltip("The radius of the leader the fish will follow up to")]
     public float followToRadius = 5f;
     [Tooltip("Apply movement smoothing when following a leader.")]
