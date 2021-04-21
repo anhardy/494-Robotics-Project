@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class SurvivalBehavior : ScriptableObject
 {
-    public abstract Vector3 CalculateDirection (Shork feesh,  List<Transform> nearby); 
+    public abstract Vector3 CalculateDirection (Shork shork,  List<Transform> nearby); 
 }

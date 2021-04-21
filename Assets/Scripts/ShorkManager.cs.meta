@@ -3,7 +3,9 @@ guid: be15a6b4179271749afaaa86a115da0c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shorkPrefab: {fileID: -2809362899591563677, guid: 80abbf45bcab13481b5bb673a85adb64, type: 3}
+  - behavior: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

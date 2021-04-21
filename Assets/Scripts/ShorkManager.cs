@@ -10,7 +10,7 @@ public class ShorkManager : MonoBehaviour
     public SurvivalBehavior behavior;
     [Range(1, 1000)]
     [Tooltip("How many agents are in the flock")]
-    public int flockCount = 250;
+    public int flockCount = 10;
     const float feeshDensity = 0.08f;
     [Range(1f, 100f)]
     [Tooltip("Increase the velocity of the flock agents")]
@@ -80,7 +80,7 @@ public class ShorkManager : MonoBehaviour
         { //For the number of feesh we want
             Shork newShork = Instantiate(
                 shorkPrefab, //Our shork prefab
-                Random.insideUnitSphere * flockCount * feeshDensity,  //A random position in sphere (with size based on number of feesh) to spawn it at
+                Random.insideUnitSphere,  //A random position in sphere (with size based on number of feesh) to spawn it at
                 Random.rotation, //Facing a random direction
                 transform //With this class as the parent
             );

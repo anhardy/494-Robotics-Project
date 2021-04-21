@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[CreateAssetMenu(menuName =  "ShorkBehavior/Behavior/Seek")]
 public class Seek : SurvivalBehavior
 {
     Vector3 currentVelocity;
@@ -14,6 +14,7 @@ public class Seek : SurvivalBehavior
     {
         if (shork.NearbyCount == 0)
         { //If no fish nearby
+            Debug.Log("No feesh nearby");
             return shork.transform.forward; //Maintain current direction
         }
         Transform closestFeesh = null;
@@ -37,7 +38,8 @@ public class Seek : SurvivalBehavior
         Vector3 distanceVector = closestFeesh.position - shork.transform.position;
         Vector3 seek = feeshVector + distanceVector;
 
-        return seek;
+        Debug.Log(closestFeesh);
+        return seek.normalized;
     }
 }
 
