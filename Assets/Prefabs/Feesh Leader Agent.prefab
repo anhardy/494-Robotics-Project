@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6258335672438549087}
   - component: {fileID: 6258335672438549072}
   - component: {fileID: 8779214787356996135}
+  - component: {fileID: 1514758690612026481}
   m_Layer: 0
   m_Name: Feesh Leader Agent
   m_TagString: Flock 2
@@ -74,6 +75,20 @@ MonoBehaviour:
   comment1: This has the collider and the feesh (flock agent) script.
   comment2: There is no actual model here, but it contains a child object
   comment3: which is the model.
+--- !u!114 &1514758690612026481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258335672438549073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4d275bf5629f641bd2c33cd4d4bc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  RotSpeed: 50
 --- !u!1001 &8641169395667364719
 PrefabInstance:
   m_ObjectHideFlags: 0

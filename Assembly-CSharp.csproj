@@ -85,7 +85,6 @@
      <Compile Include="Assets\Free Assets\Sardine\Scripts\IwasiRigid.cs" />
      <Compile Include="Assets\Free Assets\Sardine\Scripts\SardineUserController.cs" />
      <Compile Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
-     <Compile Include="Assets\Filter Scripts\PhysicsLayerFilter.cs" />
      <Compile Include="Assets\Free Assets\Sardine\Scripts\IwasiMove.cs" />
      <Compile Include="Assets\Scripts\Behavior Scripts\Follow.cs" />
      <Compile Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
@@ -97,6 +96,7 @@
      <Compile Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
      <Compile Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
      <Compile Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
+     <Compile Include="Assets\Scripts\Behavior Scripts\WanderAI.cs" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
@@ -107,7 +107,6 @@
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
-     <None Include="Assets\VRWaterShader2\Readme.txt" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\Projectors\Guidelines.txt" />
@@ -133,7 +132,6 @@
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
-     <None Include="Assets\VRWaterShader2\Shaders\VRWSShadowCaster.cginc" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
@@ -147,7 +145,6 @@
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\Free Assets\FreeFlyCamera\readme.txt" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
-     <None Include="Assets\VRWaterShader2\Shaders\Standard.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -158,7 +155,6 @@
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
-     <None Include="Assets\VRWaterShader2\Shaders\VRWSCore.cginc" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
@@ -170,7 +166,6 @@
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
-     <None Include="Assets\VRWaterShader2\Shaders\VRWSTess.cginc" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Free Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
@@ -370,350 +365,350 @@
     <Reference Include="UnityEditor">
         <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics.Vectors">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll</HintPath>
+    <Reference Include="netstandard">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.AppContext">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Concurrent">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Concurrent.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.NonGeneric">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.NonGeneric.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Specialized">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Annotations">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Specialized.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.EventBasedAsync">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.TypeConverter">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.TypeConverter.dll</HintPath>
     </Reference>
     <Reference Include="System.Console">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Console.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Common">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Data.Common.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Contracts">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Debug">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Debug.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.FileVersionInfo">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Process">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Process.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.StackTrace">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.StackTrace.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.TextWriterTraceListener">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tools">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tools.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.TraceSource">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tracing.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Drawing.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Dynamic.Runtime">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Dynamic.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Calendars">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Calendars.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Extensions">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.ZipFile">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.ZipFile.dll</HintPath>
     </Reference>
     <Reference Include="System.IO">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.DriveInfo">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Watcher">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Watcher.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.IsolatedStorage">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.IsolatedStorage.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.MemoryMappedFiles">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.MemoryMappedFiles.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Pipes">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Pipes.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.UnmanagedMemoryStream">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Expressions">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Expressions.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Parallel">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Parallel.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Queryable">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Queryable.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Rtc">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll</HintPath>
+    <Reference Include="System.Net.Http">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.NameResolution">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NameResolution.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.NetworkInformation">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NetworkInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Ping">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Ping.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Requests">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Requests.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Security">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Security.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Sockets">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Sockets.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebHeaderCollection">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebHeaderCollection.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebSockets.Client">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.Client.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebSockets">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.dll</HintPath>
     </Reference>
     <Reference Include="System.ObjectModel">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Emit">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Emit.ILGeneration">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Emit.Lightweight">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Extensions">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Reader">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Reader.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.ResourceManager">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Writer">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Writer.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.VisualC">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Handles">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Handles.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Numerics">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Json">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Xml">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Claims">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Claims.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Csp">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Csp.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Encoding">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Principal">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Principal.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.SecureString">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Duplex">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Http">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.NetTcp">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Primitives">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Security">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.SecureString.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encoding">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encoding.Extensions">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.RegularExpressions">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.RegularExpressions.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Overlapped">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Overlapped.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Parallel">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.Parallel.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Thread">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Thread.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.ThreadPool">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.ThreadPool.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Timer">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Timer.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.ReaderWriter">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.ReaderWriter.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XDocument">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlDocument">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlSerializer">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath.XDocument">
-        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+        <HintPath>I:/Unity/Hub/Editor/2020.1.1f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:/Users/ahard_000/Documents/Projects/Unity/Boids/494-Robotics-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

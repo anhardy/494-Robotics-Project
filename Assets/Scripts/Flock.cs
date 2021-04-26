@@ -32,6 +32,7 @@ public class Flock : MonoBehaviour
     [Range(0f, 100f)]
     [Tooltip("The radius the flock will attempt to stay within")]
     public float stayWithinRadius = 5f;
+    [Range(0f, 100f)]
     [Tooltip("The radius of the leader the fish will follow up to")]
     public float followToRadius = 5f;
     [Tooltip("Apply movement smoothing when following a leader.")]
@@ -117,7 +118,7 @@ public class Flock : MonoBehaviour
             }
             feesh.Move(direction); //Move in direction
         }
-        if (newLeader != null)
+        //if (newLeader != null)
         {
             newLeader.Move(newLeader.transform.forward);
         }

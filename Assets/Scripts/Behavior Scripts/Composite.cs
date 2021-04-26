@@ -9,7 +9,7 @@ public class Composite : FlockingBehavior
     public float[] behaviorWeights;
     public override Vector3 CalculateDirection(Feesh feesh, List<Transform> nearby, Flock flock)
     {
-        if(behaviorWeights.Length != behaviors.Length) {
+        if(behaviorWeights.Length != behaviors.Length) { //There's a better way to do this than ensuring we manually enter the same lengths
             Debug.LogError("You need the same number of weights as behaviors, dummy.");
             return Vector3.zero;
         }
@@ -20,12 +20,12 @@ public class Composite : FlockingBehavior
             Vector3 partialDirection = behaviors[i].CalculateDirection(feesh, nearby, flock) * behaviorWeights[i]; //Calculate respective behavior with respective weight
 
             if(partialDirection != Vector3.zero) { //If there is some movement being returned
-                if(partialDirection.sqrMagnitude > behaviorWeights[i] * behaviorWeights[i]) {
+                if(partialDirection.sqrMagnitude > behaviorWeights[i] * behaviorWeights[i]) { //If the square magnitude of our partial direction is > our squared behavior weight
                     partialDirection = partialDirection.normalized;
-                    partialDirection *= behaviorWeights[i];
+                    partialDirection *= behaviorWeights[i]; //Set its direction to be that of the behavior weight;
                 }
 
-                direction += partialDirection;
+                direction += partialDirection; //Add to overall (composite) direction
             }
         }
 
